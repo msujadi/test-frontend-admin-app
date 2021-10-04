@@ -1,0 +1,103 @@
+<!-- Content Wrapper. Contain pages content-->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Template</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a [routerLink]="['/']">Dashboard</a></li>
+              <li class="breadcrumb-item active">Template</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+              <!-- TABLE: LATEST ORDERS -->
+              <div class="card">
+                <div class="card-header border-transparent">
+                  <h3 class="card-title">Latest Orders</h3>
+  
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table m-0">
+                      <thead>
+                      <tr>
+                        <th>Order ID</th>
+                        <th>Item</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let template of templates | async">
+                        <td>{{template.current_page}}</td>
+                        <td>{{template.name}}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.table-responsive -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer clearfix">
+  
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div> <!-- /.row -->
+        <div class="row">
+          <div class="col">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Create Template</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form #userPost="ngForm" >
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="exampleInputEmail1" ngModel placeholder="Enter Subject">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Message</label>
+                    <input type="text" class="form-control" name="message" id="exampleInputEmail1" ngModel placeholder="Enter Message">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
